@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+	<head>
+		<meta charset="utf-8"/>
+		<title>VoiceToText_AmalALhazmi</title>
+		<style>
+		    body{background: #FFFDFD;}
+			h1{margin-top:7%;text-align: center;color: #B67D91;}
+			#v{margin-top:5%; display:flex; justify-content:center;}
+			button{ padding:139px 20px; background:#F0D6D0; border:0; border-radius:5px; 
+			        cursor: pointer; color: #B67D91; font-size:20px;font-weight: bold; margin-right:5px;}
+			textarea{ width:100%; height:300px; border-radius:5px; 
+					  resize:none; font-size:20px;border-color:#F0D6D0;
+					  margin-bottom:10px;text-align:center;}		
+		</style>
+	</head>
+	<body>
+		<h1>Voice To Text</h1>
+		<div id="v">
+			<div> <button id ="button" onclick="speech()">Start</button> </div>
+			<div> <textarea id ="text" cols="80" rows = "25 " ></textarea> </div>
+	    </div>
+		<script>
+			window.SpeechRecognition = window.webkitSpeechRecognition;
+			function speech(){
+				var speech = true;
+				const recognition = new SpeechRecognition();
+				recognition.interimResults = true;
+				recognition.addEventListener('result', e=>{
+					const transcript = Array.from(e.results)
+					.map(result => result[0])
+					.map(result => result.transcript)
+					text.innerHTML = transcript;
+					})
+	
+				if(speech == true){
+					recognition.start();
+					}
+			}
+		</script>
+	</body>
+</html>
