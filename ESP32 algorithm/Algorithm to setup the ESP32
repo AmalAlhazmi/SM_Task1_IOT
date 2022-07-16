@@ -1,0 +1,14 @@
+Algorithm to setup the ESP32:-
+1.	Download Arduino IDE.
+2.	Open the Arduino IDE and go to File>Preferences.
+3.	Go to the “Additional Board Manager URLs” field and put this URL " https://dl.espressif.com/dl/package_esp32_index.json " and press OK.
+4.	In case you have an existing  URL in the preferences you can append the path using a comma.
+5.	Go to Tools −> Board−> Boards Manager, and Go to the search bar and write ESP32 then install ESP32 by Espressif Systems.
+6.	If you get an error message while downloading go to File > Preferences then click on "C:\Users\Arbi\AppData\Local\Arduino15" and delete all the files in the directory then repeat the steps.
+7.	Connect the ESP32 board to the computer.
+8.	Go to Tools −> Boards and select the Wemos D1 mini ESP32 board.
+9.	Go to Tools −> Port and chose "com3".
+10.	Open the example code for testing your ESP32 from Examples −> WiFi −> WiFiScan.
+11.	Press the upload button in the WiFiScan sketch.
+12.	Open the Arduino IDE Serial Monitor using Tools −> Serial Monitor at a 115200 baud.
+13.	Press on the ESP32 board EN button to enable it and you will see the available networks near the ESP32 board.
